@@ -1,0 +1,124 @@
+﻿@model IEnumerable<ProjectSem3.Models.Job>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Refer to the jobs below</h4>
+                    <h2>Jobs</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-form">
+
+                    <div class="form-group">
+                        <h5>Jobs Search</h5>
+                    </div>
+
+                    <div class="row">
+                        <form asp-action="Jobs" method="get">
+                            @*@using (Html.BeginForm("Jobs","Jobs",FormMethod.Get))
+                            { *@
+                            <div class="col-12">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input name="searchString" value="@ViewData["searchString"]" type="text" class="form-conl" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                                        </td>
+                                        <td>
+                                            <button class="filled-button" type="submit">Go</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <form action="#">
+                        <h5 style="margin-bottom: 15px">Type</h5>
+
+                        <div>
+                            <label>
+                                <input type="checkbox">
+
+                                <small>Contract (5)</small>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="checkbox">
+
+                                <small>Full time (5)</small>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="checkbox">
+
+                                <small>Internship (5)</small>
+                            </label>
+                        </div>
+
+                        <br>
+
+                      
+                     
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-6">
+                            <div class="product-item">
+                                <a asp-controller="Jobs" asp-action="JobDetails" asp-route-id="@item.Id"><img src="~/assets/images/@Html.DisplayFor(modelItem => item.Image)" alt=""></a>
+                                <div class="down-content">
+                                    <a asp-controller="Jobs" asp-action="JobDetails" asp-route-id="@item.Id"><h4 style="color: red">  @Html.DisplayFor(modelItem => item.Title)</h4></a>
+
+                                    <h6>@Html.DisplayFor(modelItem => item.Wage)</h6>
+
+                                    <h4><small><i class="fa fa-briefcase"></i>Vị trí: @Html.DisplayFor(modelItem => item.Vacancy) <br> <strong><i class="fa fa-building"></i> @Html.DisplayFor(modelItem => item.Company.Name)</strong></small></h4>
+
+                                    <small>
+                                        <strong title="Posted on"><i class="fa fa-calendar"></i> @Html.DisplayFor(modelItem => item.DateCreate)</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <strong title="Location"><i class="fa fa-map-marker"></i> @Html.DisplayFor(modelItem => item.Address)</strong>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="col-md-12">
+                        <ul class="pages">
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

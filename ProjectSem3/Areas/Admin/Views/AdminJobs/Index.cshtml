@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ProjectSem3.Models.Job>
+
+@{
+    ViewData["Title"] = "Manager Jobs ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Trang chủ</a>
+                <span class="breadcrumb-item active">Manager Jobs </span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+   <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-15">
+                <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminJobs" asp-action="Create"><i class="anticon anticon-plus-circle m-r-5"></i><span>Tạo mới tài khoản</span></a>
+            </div>
+         @*   <div class="col-lg-40" style="margin-left:20px">
+                <select class="custom-select" id="idstatus" name="idstatus" style="min-width: 200px;" asp-items="ViewBag.lsTrangThai">
+                    <option value="" disabled selected>Chọn trạng thái</option>
+                </select>
+            </div>*@
+
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover e-commerce-table">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Wage</th>
+                    <th>JobDescription</th>
+                    <th>Vacancy</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                    <h6 class="m-b-0 m-l-10">@item.Title</h6>
+                                </div>
+                            </td>
+                            <td>@item.Wage</td>
+                            <td>@item.JobDescription</td>
+
+                            <td>@item.Vacancy</td>
+                            <td>@item.Address</td>
+                            @*<td>
+                                @if (item.Active)
+                                {
+                                    <div class="d-flex align-items-center">
+                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                        <div>Active</div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="d-flex align-items-center">
+                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                        <div>Blog</div>
+                                    </div>
+                                }
+                            </td>*@
+                            
+                            <td>
+                                <a class="btn btn-primary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminJobs" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                <a class="btn btn-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminJobs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                <a class="btn btn-success btn-tone m-r-5" asp-area="Admin" asp-controller="AdminJobs" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,167 @@
+﻿@model ProjectSem3.Models.Candidate
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="con-cv">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="margin: 100px auto 0 auto; width: 1000px">
+                        <form class="form-horizontal" asp-action="Create">
+                            <div class="card-body">
+                                <h4 class="card-title">Personal Info</h4>
+                                <div class="form-group row">
+                                    <label for="fname" asp-for="Fullname"
+                                           class="col-sm-3 text-end control-label col-form-label">Fullname</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Fullname"
+                                               class="form-control"
+                                               id="fname"
+                                               placeholder="First Name Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" asp-for="Age"
+                                           class="col-sm-3 text-end control-label col-form-label">Age</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Age"
+                                               class="form-control"
+                                               id="lname"
+                                               placeholder="Last Name Here" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email1" asp-for="Address"
+                                           class="col-sm-3 text-end control-label col-form-label">Address</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Address"
+                                               class="form-control"
+                                               id="email1"
+                                               placeholder="Company Name Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Phone"
+                                           class="col-sm-3 text-end control-label col-form-label">Phone</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Phone"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Literacy"
+                                           class="col-sm-3 text-end control-label col-form-label">Literacy</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Literacy"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Majors"
+                                           class="col-sm-3 text-end control-label col-form-label">Majors</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Majors"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Graduate"
+                                           class="col-sm-3 text-end control-label col-form-label">Graduate</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Graduate"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Vacancy"
+                                           class="col-sm-3 text-end control-label col-form-label">Vacancy</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" asp-for="Vacancy"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="File"
+                                           class="col-sm-3 text-end control-label col-form-label">Choose file</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" asp-for="File"
+                                               class="form-control"
+                                               id="cono1"
+                                               placeholder="Contact No Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" asp-for="Description"
+                                           class="col-sm-3 text-end control-label col-form-label">Desc</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" asp-for="Description"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+
+                                    
+                                    <div class="form-group">
+                                        <input type="submit" value="Buoc 1" class="btn btn-primary"  />
+                                        <a asp-area="Identity" asp-controller="Account" asp-action="Login" class="btn btn-primary">Buoc 2</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+

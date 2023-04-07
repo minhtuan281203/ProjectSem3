@@ -1,0 +1,156 @@
+﻿@*model IEnumerable<ProjectSem3.Models.Job>*@
+@model ProjectSem3.Models.Job
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+    <div class="page-heading about-heading header-text" style="background-image: url(~/assets/images/heading-6-1920x500.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4> Security</h4>
+
+                        <h2>Security Officer - Luxury Retail</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8">
+                <p class="lead">
+                    <i class="fa fa-map-marker"></i> Ha Noi &nbsp;&nbsp;
+                    <i class="fa fa-calendar"></i> 2-10-2019 &nbsp;&nbsp;
+                </p>
+
+                <br>
+                <br>
+                
+                
+                    <div class="form-group">
+                        <h5>@Html.DisplayFor(model => model.Title)</h5>
+                </div>
+                
+                
+                
+
+                <p>
+                    @Html.DisplayFor(model => model.JobDescription) <br />  
+                </p>
+
+
+                <br>
+                <br>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="contact-form">
+                    <div class="form-group">    
+                        
+                        <a class="filled-button btn-block" asp-controller="CVWrites" asp-action="Create" style="text-align: center">Submit CV</a>
+
+                    </div>
+                </div>
+
+                <div>
+                    <img src="assets/images/thietke.jpg" alt="" class="img-fluid wc-image">
+                </div>
+
+                <br>
+
+                <ul class="social-icons text-center">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                </ul>
+
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Wage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Wage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modification)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vacancy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vacancy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cat.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Company.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

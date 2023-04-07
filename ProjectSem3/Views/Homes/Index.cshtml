@@ -1,0 +1,249 @@
+﻿@model IEnumerable<ProjectSem3.Models.Job>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="banner header-text" style="padding-top:30px" >
+    <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+            <div class="text-content">
+                <h4>Welcome to</h4>
+                <h2>Banana Company</h2>
+            </div>
+        </div>
+        <div class="banner-item-02">
+            <div class="text-content">
+                <h4>Find your car today!</h4>
+                <h2>Laboriosam reprehenderit ducimus</h2>
+            </div>
+        </div>
+        <div class="banner-item-03">
+            <div class="text-content">
+                <h4>Some notable news</h4>
+                <h2>Quaerat suscipit unde minus dicta</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Ends Here -->
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Featured Jobs</h2>
+                    <a asp-controller="Jobs" asp-action="Jobs">View more <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            @foreach (var item in Model.Take(3)) {
+            <div class="col-md-4">
+                    <div class="product-item">
+                        <a asp-controller="Jobs" asp-action="JobDetails" asp-route-id="@item.Id"><img src="~/assets/images/@Html.DisplayFor(modelItem => item.Image)" alt=""></a>
+                        <div class="down-content">
+                            <a asp-controller="Jobs" asp-action="JobDetails" asp-route-id="@item.Id"><h4 style="color: red">  @Html.DisplayFor(modelItem => item.Title)</h4></a>
+
+                            <h6>@Html.DisplayFor(modelItem => item.Wage)</h6>
+
+                            <h4><small><i class="fa fa-briefcase"></i>Vị trí: @Html.DisplayFor(modelItem => item.Vacancy) <br> <strong><i class="fa fa-building"></i> @Html.DisplayFor(modelItem => item.Company.Name)</strong></small></h4>
+
+                            <small>
+                                <strong title="Posted on"><i class="fa fa-calendar"></i> @Html.DisplayFor(modelItem => item.DateCreate)</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Location"><i class="fa fa-map-marker"></i> @Html.DisplayFor(modelItem => item.Address)</strong>
+                            </small>
+                        </div>
+                    </div>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div class="best-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>About Us</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <p>
+                        The company though has only been established for almost 10 years. However, abcCV consists of a staff full of dynamic, creative and enthusiastic young people. We has done over 950 programming jobs, large and small web design, nearly 500 software programming projects (including web app and mobile application programming). As a company that brings ordering software products and provides 1 of the leading and only hostel management software products in Vietnam operating on all platforms.
+                    </p>
+                    <ul class="featured-list">
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur an adipisicing elit</a></li>
+                        <li><a href="#">It aquecorporis nulla aspernatur</a></li>
+                        <li><a href="#">Corporis, omnis doloremque</a></li>
+                    </ul>
+                    <a asp-controller="About" asp-action="Index" class="filled-button">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-image">
+                    <img src="~/assets/images/about-1-570x350.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="services" style="background-image: url(~/assets/images/other-image-fullscren-1-1920x900.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Latest blog posts</h2>
+                    <h2>Featured Jobs</h2>
+                    <a asp-controller="Blog" asp-action="Index">Read more <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <a asp-controller="BlogDetail" asp-action="Index" class="services-item-image"><img src="~/assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
+
+                    <div class="down-content">
+                        <h4><a asp-controller="BlogDetail" asp-action="Index">Writting has always ben kind of therapeutic for me in the mine</a></h4>
+
+                        <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <a asp-controller="BlogDetail" asp-action="Index1" class="services-item-image"><img src="~/assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
+
+                    <div class="down-content">
+                        <h4><a asp-controller="BlogDetail" asp-action="Index1">Absolue collection. The Lancome team has been one...</a></h4>
+
+                        <p style="margin: 0;"> Mary Pin &nbsp;&nbsp;|&nbsp;&nbsp; 10/07/2020 11:00 &nbsp;&nbsp;|&nbsp;&nbsp; 115</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <a asp-controller="BlogDetail" asp-action="Index2" class="services-item-image"><img src="~/assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
+
+                    <div class="down-content">
+                        <h4><a asp-controller="BlogDetail" asp-action="Index2">Aperiam modi fuga officiis cumque the disfillcuft amain</a></h4>
+
+                        <p style="margin: 0;"> Petter Pan &nbsp;&nbsp;|&nbsp;&nbsp; 11/082020 11:00 &nbsp;&nbsp;|&nbsp;&nbsp; 116</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="happy-clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Happy Clients</h2>
+
+                    <a href="testimonials.html">Read more <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="owl-clients owl-carousel text-center">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>John Doe</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>Jane Smith</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>Antony Davis</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>John Doe</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>Jane Smith</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="down-content">
+                            <h4>Antony Davis</h4>
+                            <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>You are wondering for more advice.</h4>
+                            <p>If you want to find a job, please contact us for further advice and receive our interview schedule.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 text-right">
+                            <a asp-controller="Contact" asp-action="Index" class="filled-button">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
